@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SalesApp.Views;
+using System;
+using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +12,7 @@ namespace SalesApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new ProductsPage();
         }
 
         protected override void OnStart()
