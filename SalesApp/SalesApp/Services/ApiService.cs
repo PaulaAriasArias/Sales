@@ -22,7 +22,7 @@ namespace SalesApp.Services
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = Languages.TurnOnInternet,
+                    Message = "No esta conectado a Datos o Wifi",
                 };
             }
 
@@ -32,7 +32,7 @@ namespace SalesApp.Services
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = Languages.NoInternet,
+                    Message = "No tiene Internet",
                 };
             }
 
