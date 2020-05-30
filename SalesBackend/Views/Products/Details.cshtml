@@ -11,40 +11,56 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.Descripcion)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
+            @Html.DisplayFor(model => model.Descripcion)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Price)
+            @Html.DisplayNameFor(model => model.Notas)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Price)
+            @Html.DisplayFor(model => model.Notas)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.IsAvailable)
+            @Html.DisplayNameFor(model => model.ImagePath)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.IsAvailable)
+            @Html.DisplayFor(model => model.ImagePath)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PublishOn)
+            @Html.DisplayNameFor(model => model.Precio)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PublishOn)
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Disponible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Disponible)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductoId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

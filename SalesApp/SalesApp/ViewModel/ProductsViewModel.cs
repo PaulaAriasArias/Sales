@@ -47,20 +47,24 @@ namespace SalesApp.ViewModel
             var connection = await this.apiService.CheckConnection();
             if(!connection.IsSuccess)
             {
-                this.IsRefreshing = false;
+                //this.IsRefreshing = false;
                 //await Application.Current.MainPage.DisplayAlert(Languages.Error, connection.Message, Languages.Accept);
                 await Application.Current.MainPage.DisplayAlert("Error", connection.Message, "Aceptar");
                 return;
             }
 
 
-        //var url = Application.Current.Resources["UrlAPI"].ToString();
-        //var prefix = Application.Current.Resources["Prefix"].ToString();
-        //var controller = Application.Current.Resources["UrlProductsController"].ToString()
+            //var url = Application.Current.Resources["UrlAPI"].ToString();
+            //var prefix = Application.Current.Resources["Prefix"].ToString();
+            //var controller = Application.Current.Resources["UrlProductsController"].ToString()
 
+            //*******************************
+            //var response1 = await this.apiService.GetRestaurants();
 
-        
-            var response = await this.apiService.GetList<Product>("http://localhost/ApiSalesNet/", "/api", "/Products");
+            //*******************************
+
+            var response = await this.apiService.GetListGen<Product>("http://179.12.106.203/ApiSalesNet", "/api", "/Products");
+            //var response = await this.apiService.GetList<Product>("http://179.12.106.203/ApiSalesNet", "/api", "/Products");
             //var response = await this.apiService.GetList<Product>("http://localhost/ApiSalesNet/", "/api", "/Products");
             // var response = await this.apiService.GetList<Product>(url, prefix, controller);
             if (!response.IsSuccess)

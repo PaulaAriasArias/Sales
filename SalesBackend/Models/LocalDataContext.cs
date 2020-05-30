@@ -6,6 +6,6 @@ namespace SalesBackend.Models
 
     public class LocalDataContext : DataContext
     {
-        public System.Data.Entity.DbSet<SalesCommon.Models.Product> Products { get; set; }
+        
     }
 }

@@ -42,6 +42,57 @@ namespace SalesApp.Services
             };
         }
 
+        async public Task<int> GetRestaurants()
+        {
+            using (var client = new HttpClient())
+            {
+                var response = await client.GetAsync(new
+                    Uri("http://179.12.106.203/ApiSalesNet/api/Products"));
+                if (response.IsSuccessStatusCode)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+                    return 1;
+                }
+            }
+            return 1;
+        }
+
+        public async Task<Response> GetListGen<T>(string urlBase, string prefix, string controller)
+        {
+            try
+            {
+                var client = new HttpClient();
+                var url = $"{urlBase}{prefix}{controller}";
+                var response = await client.GetAsync(url);
+                var answer = await response.Content.ReadAsStringAsync();
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = answer,
+                    };
+                }
+
+                var list = JsonConvert.DeserializeObject<List<T>>(answer);
+
+                return new Response
+                {
+                    IsSuccess = true,
+                    Result = list,
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                };
+            }
+
+        }
+
         public async Task<Response> GetList<T>(string urlBase, string prefix, string controller)
         {
             try
